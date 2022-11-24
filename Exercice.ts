@@ -32,16 +32,22 @@ somme(2, 5);
 // Exercice 3
 
 /**
- * Calcule la différence entre 2 nombre et retourne une phrase selon qu'il s'agit d'un benefice ou d'une perte
+ * Calcule la différence entre deux nombres, puis demande l'affichage d'un commentaire
  * @param prixDeVente
  * @param prixDeFabrication
- * @returns
  */
 function calculDesBenefices(
   prixDeVente: number,
   prixDeFabrication: number
-): string {
+): void {
   const benefice: number = prixDeVente - prixDeFabrication;
+  console.log(affichageDesBenefices(benefice));
+}
+
+/**
+ * Modifie le commentaire selon qu'il s'agit de perte ou de gain
+ */
+function affichageDesBenefices(benefice: number): string {
   let affichage: string = "";
 
   if (benefice > 0) {
@@ -52,4 +58,5 @@ function calculDesBenefices(
 
   return affichage;
 }
-console.log(calculDesBenefices(20, 15));
+
+calculDesBenefices(20, 15);
