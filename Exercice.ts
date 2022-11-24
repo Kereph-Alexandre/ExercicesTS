@@ -7,61 +7,80 @@
 // Exercice 1
 /**
  * Affiche un message de bienvenue dans la console
- * @param prenom
+ * @param name
  */
-function accueil(prenom: string): void {
-  console.log(`Bonjour ${prenom} !`);
+function welcome(name: string): void {
+  console.log(`Bonjour ${name} !`);
 }
 
-accueil("Alexandre");
+welcome("Alexandre");
 
 // Exercice 2
 
 /**
  * Affiche dans la console la somme des deux nombre entrés en paramètre
- * @param nombre1
- * @param nombre2
+ * @param number1
+ * @param number2
  */
-function somme(nombre1: number, nombre2: number): void {
-  const resultat: number = nombre1 + nombre2;
+function Addition(number1: number, number2: number): void {
+  const resultat: number = number1 + number2;
   console.log(resultat);
 }
 
-somme(2, 5);
+Addition(2, 5);
 
 // Exercice 3
 
 /**
  * Calcule la différence entre deux nombres, puis demande l'affichage d'un commentaire
- * @param prixDeVente
- * @param prixDeFabrication
+ * @param sellPrice
+ * @param prodPrice
  */
-function calculDesBenefices(
-  prixDeVente: number,
-  prixDeFabrication: number
-): void {
-  const benefice: number = prixDeVente - prixDeFabrication;
-  console.log(affichageDesBenefices(benefice));
+function calculateProfits(sellPrice: number, prodPrice: number): void {
+  const profits: number = sellPrice - prodPrice;
+  console.log(showProfits(profits));
 }
-
 
 /**
  * Modifie le commentaire selon qu'il s'agit de perte ou de gain
- * @param benefice 
- * @returns 
+ * @param profits
+ * @returns
  */
-function affichageDesBenefices(benefice: number): string {
-  let affichage: string = "";
+function showProfits(profits: number): string {
+  let result: string = "";
 
-  if (benefice > 0) {
-    affichage = `Gain de ${benefice}`;
+  if (profits > 0) {
+    result = `Gain de ${profits}`;
   } else {
-    affichage = `Perte de ${Math.abs(benefice)}`;
+    result = `Perte de ${Math.abs(profits)}`;
   }
 
-  return affichage;
+  return result;
 }
 
-calculDesBenefices(20, 15);
+calculateProfits(20, 15);
 
+// Exercice 4
 
+/**
+ * Compare 3 nombres
+ * @param firstNumber
+ * @param secondNumber
+ * @param thirdNumber
+ * @returns le nombre de la plus grande valeur dans une phrase
+ */
+function deternmineHighestNumber(
+  firstNumber: number,
+  secondNumber: number,
+  thirdNumber: number
+): string {
+  let highestNumber = 0;
+  if (firstNumber > secondNumber && firstNumber > thirdNumber) {
+    highestNumber = firstNumber;
+  } else if (secondNumber > firstNumber && secondNumber > thirdNumber) {
+    highestNumber = secondNumber;
+  } else highestNumber = thirdNumber;
+  return `Le plus grand nombre est ${highestNumber}`;
+}
+
+console.log(deternmineHighestNumber(2, 25, 15));
