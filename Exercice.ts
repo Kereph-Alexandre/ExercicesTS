@@ -44,8 +44,11 @@ function calculDesBenefices(
   console.log(affichageDesBenefices(benefice));
 }
 
+
 /**
  * Modifie le commentaire selon qu'il s'agit de perte ou de gain
+ * @param benefice 
+ * @returns 
  */
 function affichageDesBenefices(benefice: number): string {
   let affichage: string = "";
@@ -60,3 +63,5 @@ function affichageDesBenefices(benefice: number): string {
 }
 
 calculDesBenefices(20, 15);
+
+
