@@ -7,7 +7,7 @@ const bills: number[] = [
  * les multiplications et divisions par mille évitent les problème de gestion des décimales avec JS
  * @param sum Somme totale à décomposer
  */
-function breakDownSum(sum: any): void {
+function breakDownSum(sum: number): void {
 
   checkNumber(sum);
 
