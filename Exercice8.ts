@@ -6,12 +6,12 @@
 function pyramid(base:number):void{
     let asterisks:string[] = [];
 
-    for (let index = 0;  index < base ; index++){
+    for (let index:number = 0;  index < base ; index++){
         asterisks.push('*');
         console.log(asterisks.join(''));
     }
 
-    for (let index = 0;  index < base ; index++){
+    for (let index:number = 0;  index < base ; index++){
         asterisks.pop();
         console.log(asterisks.join(''));
     }
