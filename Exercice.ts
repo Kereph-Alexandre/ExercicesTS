@@ -5,9 +5,3 @@
  * DOC ! */
 
 
-
-// // Exercice 8
-function pyramid(base:number):void{
-    let asterisks:string[] = [];
-
-}
