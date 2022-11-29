@@ -1,4 +1,6 @@
 import { Collaborateur } from "../Interfaces/Collaborateur";
+import { Remunerer } from "../Interfaces/Remunerer";
+import { DureeLimite } from "../Interfaces/DureeLimite";
 
 class CDD implements Remunerer, DureeLimite{
     nom: string;
@@ -50,3 +52,5 @@ class CDD implements Remunerer, DureeLimite{
       }
 
 }
+
+export default CDD;

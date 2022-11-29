@@ -1,4 +1,5 @@
 import { Collaborateur } from "../Interfaces/Collaborateur";
+import { DureeLimite } from "../Interfaces/DureeLimite";
 
 class Stagiaire implements DureeLimite {
     nom: string;
@@ -27,3 +28,5 @@ class Stagiaire implements DureeLimite {
       return `${this.prenom} ${this.nom} fait des trucs`;
     }
   }
+
+  export default Stagiaire;

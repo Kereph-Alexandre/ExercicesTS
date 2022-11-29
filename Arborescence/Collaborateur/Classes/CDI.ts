@@ -35,3 +35,5 @@ class CDI implements Remunerer {
       }
     }
   }
+
+  export default CDI;
