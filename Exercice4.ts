@@ -37,13 +37,12 @@ abstract class Chat {
 }
 
 class Europeen extends Chat {
-  private _surnoms!: string[];
-  private _origine!: string;
+  private _surnoms: string[];
+  private _origine: string = 'Europe';
 
-  constructor(nom: string, age: number, poids: number, surnoms:string[], origine:string = 'Europe') {
+  constructor(nom: string, age: number, poids: number, surnoms:string[]) {
     super(nom, age, poids);
-    this.surnoms = surnoms;
-    this._origine = origine;
+    this._surnoms = surnoms;
   }
   get surnoms(): string[] {
     return this._surnoms;
