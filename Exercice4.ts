@@ -49,7 +49,7 @@ class Europeen extends Chat {
   }
 
   set surnoms(surnoms: string[]) {
-    this._surnoms = surnoms;
+    surnoms.forEach(surnom => {this._surnoms.push(surnom)});
   }
  
 
