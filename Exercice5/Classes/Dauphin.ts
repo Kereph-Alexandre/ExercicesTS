@@ -23,6 +23,9 @@ class Dauphin extends Mammifere implements Aquatique {
     );
   }
 
+  /**
+   * Permet au dauphin de respirer lorsqu'il se situe en profondeur
+   */
   respirerSousLeau(): void {
     this.retenirRespiration();
     this.nager("Surface");
@@ -33,11 +36,18 @@ class Dauphin extends Mammifere implements Aquatique {
     this.nager("Eau");
   }
 
+  /**
+   * empêche le dauphin de respirer
+   */
   retenirRespiration(): void {
     this._peutRespirer = false;
     console.log(`Je bloque ma respiration`);
   }
 
+  /**
+   * Permet au dauphin de se déplacer vers un nouveau lieux
+   * @param destination nouveau lieu
+   */
   nager(destination: string): void {
     this.emplacement = destination;
     this.oxygene = -5;
@@ -52,6 +62,9 @@ class Dauphin extends Mammifere implements Aquatique {
     );
   }
 
+  /**
+   * oui, bah comme flipper quoi
+   */
   cliquetter(): void {
     console.log(`kikikikiki`);
   }

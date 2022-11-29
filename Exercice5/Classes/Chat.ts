@@ -2,16 +2,25 @@ import { Mammifere } from "../Abstracts/Mammifère";
 import { Terrestre } from "../Interfaces/Milieux/Terrestre";
 
 class Chat extends Mammifere implements Terrestre {
-  nombrePatte: number = 4;
-  milieu: string = "Terre";
+  _nombrePatte: number = 4;
+  _milieu: string = "Terre";
+  _localisation:string = 'Salon';
 
   constructor(nom: string, poids: number, dateNaissance: Date) {
     super(nom, poids, dateNaissance);
   }
 
+  public get localisation(){return this._localisation};
+  public get milieu() {return this._milieu}
+  public get pattes() {return this._nombrePatte}
+
+  public set localisation(nouveauLieu:string){
+
+  }
+
   afficher(): void {
     console.log(
-      `Je suis un Chat qui s'appelle ${this._nom}. J'ai ${this.age} ans et pèse ${this._poids}kg`
+      `Je suis un Chat qui s'appelle ${this.nom}. J'ai ${this.age} ans et pèse ${this.poids}kg. Vous me trouverez dans le/la ${this._localisation}`
     );
   }
 
@@ -25,10 +34,10 @@ class Chat extends Mammifere implements Terrestre {
     }
   }
 
-  marcher(): void {
-    this.oxygene = -5;
+  marcher(energie:number, lieu:string): void {
+    this.oxygene = -energie;
     console.log(
-      `J'utilise mes ${this.nombrePatte} pattes pour me déplacer. Je suis fatigué (oxy : ${this.oxygene})`
+      `J'utilise mes ${this._nombrePatte} papattes pour me déplacer vers ${lieu}. Je suis fatigué (oxy : ${this.oxygene})`
     );
   }
 
