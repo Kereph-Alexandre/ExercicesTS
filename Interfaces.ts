@@ -62,9 +62,7 @@ class Stagiaire implements DureeLimite {
   }
 
   get fin(): string {
-    return `La fin de contract de ${this.nom} ${
-      this.prenom
-    } est fixée au ${this.finContrat.toLocaleDateString()}`;
+    return this.finContrat.toLocaleDateString();
   }
 
   prolonger(jours: number): void {
@@ -94,9 +92,7 @@ class CDD implements Remunerer, DureeLimite{
     }
 
     get fin(): string {
-        return `La fin de contract de ${this.nom} ${
-          this.prenom
-        } est fixée au ${this.finContrat.toLocaleDateString()}`;
+        return this.finContrat.toLocaleDateString();
       }
 
     /**
