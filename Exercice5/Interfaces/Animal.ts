@@ -3,5 +3,7 @@ export interface Animal {
   _poids: number;
   _dateNaissance: Date;
 
+  _oxygene:number;
+
   afficher(): void;
 }

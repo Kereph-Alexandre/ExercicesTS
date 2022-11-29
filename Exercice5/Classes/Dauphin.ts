@@ -2,27 +2,59 @@ import { Mammifere } from "../Abstracts/Mammifère";
 import { Aquatique } from "../Interfaces/Milieux/Aquatique";
 
 class Dauphin extends Mammifere implements Aquatique {
+  _emplacement: string = "Eau";
+  _peutRespirer: boolean = true;
 
-    constructor(nom:string, poids:number, dateNaissance:Date){
-        super(nom, poids, dateNaissance)
+  constructor(nom: string, poids: number, dateNaissance: Date) {
+    super(nom, poids, dateNaissance);
+  }
+
+  public get emplacement(): string {
+    return this._emplacement;
+  }
+
+  public set emplacement(nouvelEmplacement: string) {
+    this._emplacement = nouvelEmplacement;
+  }
+
+  afficher(): void {
+    console.log(
+      `Je suis un dauphin nommé ${this._nom}. J'ai ${this.age} et pèse ${this._poids}kg`
+    );
+  }
+
+  respirerSousLeau(): void {
+    this.retenirRespiration();
+    this.nager("Surface");
+
+    if (this._peutRespirer) {
+      this.oxygene = 30;
+    }
+    this.nager("Eau");
+  }
+
+  retenirRespiration(): void {
+    this._peutRespirer = false;
+    console.log(`Je bloque ma respiration`);
+  }
+
+  nager(destination: string): void {
+    this.emplacement = destination;
+    this.oxygene = -5;
+
+    if (destination == "Surface") {
+      this._peutRespirer = true;
+      console.log(`Je peux respirer`);
     }
 
-    afficher():void {
-        console.log(`Cet animal est un Dauphin que l'on nomme ${this._nom}. Il est né le ${this._dateNaissance.toLocaleDateString()} et pèse ${this._poids}kg`);
-    }
+    console.log(
+      `Je me suis déplacé vers ${this.emplacement}, je suis fatigué (oxygenation : ${this.oxygene})`
+    );
+  }
 
-    respirerSousLeau(): void {
-
-    }
-
-    nager(): void {
-        
-    }
-
-    cliquetter():void{
-
-    }
-    
+  cliquetter(): void {
+    console.log(`kikikikiki`);
+  }
 }
 
 export default Dauphin;
