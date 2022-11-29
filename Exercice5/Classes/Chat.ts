@@ -2,6 +2,8 @@ import { Mammifere } from "../Abstracts/Mammifère";
 import { Terrestre } from "../Interfaces/Milieux/Terrestre";
 
 class Chat extends Mammifere implements Terrestre{
+    nombrePatte:number = 4;
+    milieu:string = 'Terre';  
 
     constructor(nom:string, poids:number, dateNaissance:Date){
         super(nom, poids, dateNaissance);
@@ -12,13 +14,15 @@ class Chat extends Mammifere implements Terrestre{
     }
 
     respirerHorsDeLeau(): void {
-        throw new Error("Method not implemented.");
-    }
-    marcher(): void {
-        throw new Error("Method not implemented.");
-    }
-    miauler():void{
 
+    }
+
+    marcher(): void {
+        console.log(`J'utilise mes ${this.nombrePatte} pattes pour me déplacer.`);;
+    }
+    
+    miauler():void{
+        console.log('miaou');
     }
 }
 

@@ -12,11 +12,15 @@ class Dauphin extends Mammifere implements Aquatique {
     }
 
     respirerSousLeau(): void {
-        throw new Error("Method not implemented.");
+
     }
 
     nager(): void {
-        throw new Error("Method not implemented.");
+        
+    }
+
+    cliquetter():void{
+
     }
     
 }
