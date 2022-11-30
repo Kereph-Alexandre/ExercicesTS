@@ -1,1 +1,3 @@
 Dans la précipitation, j'avais crée 2 repo (1 pour les 10 exercice de base de TypeScript, 1 pour les exercices avec les Objets/Classes/Interfaces). J'ai souhaité merge les deux repo, il en résulte quelques conflits sur les fichiers qui portaient le même nom, voilà pourquoi les exercice 1 à 4 contiennent chacun 2 exercices. je corrige cela au plus vite :)
+
+Done!
